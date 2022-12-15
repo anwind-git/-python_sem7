@@ -52,13 +52,7 @@ def WholeList():
     print('------------------------------------------------------------------------------------------')
     file = open('list.txt', 'r')
     file_text = ''.join(file)
-    file_text = list(i for i in file_text)
-    j = 0
-    while j < len(file_text):
-        if file_text[j] == ';':
-            file_text[j] = ' '
-        j += 1
-    file_text = ''.join(file_text)
+    file_text = file_text.replace(';', ' ')
     print(file_text)
     file.close()
 
